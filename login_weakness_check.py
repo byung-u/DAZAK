@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 import requests
 
-url = 'http://ec2-52-78-210-20.ap-northeast-2.compute.amazonaws.com:10051/login/'
+url = 'http://ec2-52-78-210-2f.ap-northeast-2.compute.amazonaws.com:10051/login/'
 client = requests.session()
 client.get(url)
 
