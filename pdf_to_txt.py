@@ -31,7 +31,7 @@ laparams = LAParams()
 fname = '20160814-keynote-fijal.pdf'
 fp = file(fname, 'rb') 
  
-outfpname = 'pdf2output' 
+outfpname = 'pdf2text' 
  
 rsrcmgr = PDFResourceManager(caching=caching) 
 outfp = file(outfpname + '.txt', 'w') 
@@ -46,22 +46,3 @@ for page in PDFPage.get_pages(fp, pagenos,
     interpreter.process_page(page) 
      
 outfp.close() 
- 
-'''
-rsrcmgr = PDFResourceManager(caching=caching) 
-outfp = file(outfpname + '.html', 'w') 
-device = HTMLConverter(rsrcmgr, outfp, codec=codec, scale=scale, 
-                       layoutmode=layoutmode, laparams=laparams, 
-                       imagewriter=imagewriter) 
- 
-interpreter = PDFPageInterpreter(rsrcmgr, device) 
-for page in PDFPage.get_pages(fp, pagenos, 
-                              maxpages=maxpages, password=password, 
-                              caching=caching, check_extractable=True): 
-    page.rotate = (page.rotate+rotation) % 360 
-    interpreter.process_page(page) 
-     
-outfp.close() 
-'''
- 
-fp.close()
