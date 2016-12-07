@@ -5,8 +5,11 @@
 
 # File nameing rule
 
-$Number_$1_$2_$3.py
+Number with lowercase letter
 
+`$Number_$1_$2_$3.py`
+
+Example
 ```
   P0001_pyconkr2016_login_url.py
   P0002_pyconkr_repocount_check.py
