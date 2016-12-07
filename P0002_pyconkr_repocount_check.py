@@ -15,16 +15,16 @@ CURRENT_REPO = 10
 
 def send_telegram():
     config = configparser.ConfigParser()
-    config.readfp(open('bot.ini'))
-    telegram_token = self.config.get('TOKEN', 'telegram')
-    chat_id = self.config.get('TOKEN', 'chat_id')
+    config.readfp(open('conf.ini'))
+    telegram_token = config.get('0002', 'telegram_token')
+    chat_id = config.get('0002', 'chat_id')
     bot = telepot.Bot(telegram_token)
     bot.sendMessage(chat_id, "Repository Add Check it pyconkr!!")
 
 
 def send_email():
-    me = 'byungwoo@notify.com'
-    you = 'iam.byungwoo@gmail.com'
+    me = 'test@notify.com'
+    you = 'mymail@gmail.com'
 
     msg = MIMEMultipart('alternative')
     msg['Subject'] = "pyconkr 리포지터리가 바꼈다."

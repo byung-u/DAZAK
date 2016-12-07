@@ -1,8 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 import requests
+import configparser
 
-url = 'http://ec2-52-78-210-2f.ap-northeast-2.compute.amazonaws.com:10051/login/'
+config = configparser.ConfigParser()
+config.readfp(open('conf.ini'))
+url = config.get('0001', 'url')
+
 client = requests.session()
 client.get(url)
 
