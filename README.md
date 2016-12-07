@@ -7,10 +7,7 @@
 # File nameing rule
 
 Number with lowercase letter
-<<<<<<< HEAD
-=======
 
->>>>>>> 3d5b34e1b2515a58cd5d66803f473e16ce614f97
 `$Number_$1_$2_$3.py`
 
 Example
