@@ -7,11 +7,18 @@
 # File nameing rule
 
 Number with lowercase letter
+- P000X : Normal python scripts
+- A000X : Algorithm with python
 
-`$Number_$1_$2_$3.py`
+```
+$Number_$1_$2_$3.py
+```
 
 Example
 ```
+  A0001_leetcode_1_twosum.py
+
   P0001_pyconkr2016_login_url.py
   P0002_pyconkr_repocount_check.py
+
 ```
