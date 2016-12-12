@@ -3,6 +3,7 @@
 
 import sys
 import telepot
+import configparser
 
 from requests import get
 from bs4 import BeautifulSoup
@@ -12,6 +13,7 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
 CURRENT_REPO = 10
+
 
 def send_telegram():
     config = configparser.ConfigParser()
@@ -34,13 +36,12 @@ def send_email():
     answer = "가서 시작했나 확인하고 contribution 가능한지 찔러보삼"
     part1 = MIMEText(answer, 'plain', 'UTF-8')
     msg.attach(part1)
-    #print(msg.as_string())
-    #print('send success')
+    # print(msg.as_string())
+    # print('send success')
 
     s = smtplib.SMTP('localhost')
     s.sendmail(me, you, msg.as_string())
     s.quit()
-
 
 
 if __name__ == '__main__':
@@ -49,12 +50,12 @@ if __name__ == '__main__':
     r = get(url)
     soup = BeautifulSoup(r.text, 'html.parser')
     cnt = 0
-    for link in  soup.find_all('a'):
+    for link in soup.find_all('a'):
         repo = link.get('href')
         repo = str(repo)
         if (repo.startswith('/pythonkr')) and (repo.count('/') == 2):
-            #print(repo)
-            cnt+=1
+            # print(repo)
+            cnt += 1
 
     if (cnt < CURRENT_REPO):
         send_telegram()

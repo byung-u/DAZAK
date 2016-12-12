@@ -27,9 +27,10 @@ Sample 2
     def x(self, value): ...
 """
 
+
 # Not use decorator
 class Distance:
-    def __init__(self, kilometer = 0):
+    def __init__(self, kilometer=0):
         self.set_kilometer(kilometer)
 
     def to_mile(self):
@@ -42,22 +43,22 @@ class Distance:
         self._kilometer = value
 
     kilometer = property(get_kilometer, set_kilometer)
-    #kilometer = property()
-    #kilometer = kilometer.getter(get_kilometer)
-    #kilometer = kilometer.setter(set_kilometer)
+    """
+    kilometer = property()
+    kilometer = kilometer.getter(get_kilometer)
+    kilometer = kilometer.setter(set_kilometer)
+    """
+
 
 # Use decorator
 class Celsius:
-    def __init__(self, temperature = 0):
+    def __init__(self, temperature=0):
         self.temperature = temperature
-        #self.set_temperature(temperature)
 
     def to_fahrenheit(self):
         return (self.temperature * 1.8) + 32
-        #return (self.get_temperature() * 1.8) + 32
 
     @property
-    #def get_temperature(self):
     def temperature(self):
         return self._temperature
 

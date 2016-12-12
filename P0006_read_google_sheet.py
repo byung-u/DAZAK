@@ -56,10 +56,11 @@ def get_credentials():
         flow.user_agent = APPLICATION_NAME
         if flags:
             credentials = tools.run_flow(flow, store, flags)
-        else: # Needed only for compatibility with Python 2.6
+        else:  # Needed only for compatibility with Python 2.6
             credentials = tools.run(flow, store)
         print('Storing credentials to ' + credential_path)
     return credentials
+
 
 def main():
     credentials = get_credentials()
@@ -88,7 +89,7 @@ def main():
             msg['To'] = row[1]
 
             s = smtplib.SMTP('localhost')
-            #s = smtplib.SMTP('localhost', 60011)
+            # s = smtplib.SMTP('localhost', 60011)
             s.sendmail('support@test.kr', [row[1]], msg.as_string())
             s.quit()
 

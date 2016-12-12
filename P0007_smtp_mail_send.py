@@ -19,7 +19,7 @@ msg.attach(part1)
 print(msg.as_string())
 
 s = smtplib.SMTP('localhost')
-#s = smtplib.SMTP('localhost', 60011)
+# s = smtplib.SMTP('localhost', 60011)
 s.sendmail(me, you, msg.as_string())
 print('send success')
 

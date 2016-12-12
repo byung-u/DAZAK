@@ -1,7 +1,7 @@
 #!/usr/bin/env python3.5
 # -*- coding: utf-8 -*-
 
-from __future__ import print_function 
+from __future__ import print_function
 import httplib2
 import os
 
@@ -50,10 +50,11 @@ def get_credentials():
         flow.user_agent = APPLICATION_NAME
         if flags:
             credentials = tools.run_flow(flow, store, flags)
-        else: # Needed only for compatibility with Python 2.6
+        else:  # Needed only for compatibility with Python 2.6
             credentials = tools.run(flow, store)
         print('Storing credentials to ' + credential_path)
     return credentials
+
 
 def main():
     """Shows basic usage of the Gmail API.
@@ -72,9 +73,9 @@ def main():
     if not labels:
         print('No labels found.')
     else:
-      print('Labels:')
-      for label in labels:
-        print(label['name'])
+        print('Labels:')
+        for label in labels:
+            print(label['name'])
 
 
 if __name__ == '__main__':
