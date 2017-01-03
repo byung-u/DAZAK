@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+
 def send_with_gmail(body):
     import smtplib
     from email.mime.multipart import MIMEMultipart
@@ -12,12 +13,12 @@ def send_with_gmail(body):
     from_addr = 'byeongwoo.jun@gmail.com'   # 보내는 사람 주소
     to_addr = 'iam.byungwoo@gmail.com'      # 받는 사람 주소
 
-    msg=MIMEMultipart('alternative')
+    msg = MIMEMultipart('alternative')
     msg['From'] = from_addr
     msg['To'] = to_addr
-    msg['Subject'] = 'Send email with Gmail'     # 제목
-    msg.attach(MIMEText(body, 'plain', 'utf-8')) # 내용 인코딩
-   
+    msg['Subject'] = 'Send email with Gmail'      # 제목
+    msg.attach(MIMEText(body, 'plain', 'utf-8'))  # 내용 인코딩
+
     ########################
     # https://www.google.com/settings/security/lesssecureapps
     # Make sure less_secure_apps select 'use'
@@ -32,6 +33,7 @@ def send_with_gmail(body):
         print('successfully sent the mail')
     except BaseException as e:
         print("failed to send mail", str(e))
+
 
 if __name__ == '__main__':
     send_msg = '''
